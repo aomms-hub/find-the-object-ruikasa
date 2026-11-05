@@ -20,6 +20,15 @@
     dialog.setAttribute('aria-labelledby', 'complete-title');
     dialog.setAttribute('tabindex', '-1');
     const character = 1 + Math.floor(Math.random() * 3);
+    const socials = [ ['twitter', 'Twitter'], ['facebook', 'Facebook'], ['tiktok', 'TikTok'] ];
+    const socialIcons = socials.map(([key, label]) => {
+      const configured = window.completeSocialLinks?.[key];
+      let url;
+      try { const parsed = new URL(configured); if (parsed.protocol === 'https:' || parsed.protocol === 'http:') url = parsed.href; } catch {}
+      const escaped = url?.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+      const link = escaped ? `href="${escaped}" target="_blank" rel="noopener noreferrer"` : 'aria-disabled="true"';
+      return `<a class="complete-social-link" ${link} aria-label="${label}" title="${label}"><img src="assets/icons/${key}.png" alt="" width="24" height="24"></a>`;
+    }).join('');
     dialog.innerHTML = `
       <div class="instruction-content complete-content">
         <p class="complete-count">12 / 12</p>
@@ -34,6 +43,7 @@
           <button class="complete-replay" type="button" data-action="replay">เล่นอีกครั้ง</button>
         </div>
         <p class="complete-message">One Two Special Express | #12SpecialExpressTH</p>
+        <nav class="complete-socials" aria-label="sns">${socialIcons}</nav>
       </div>`;
     document.body.append(dialog);
     for (const event of ['touchstart', 'touchmove', 'touchend', 'touchcancel', 'wheel']) {

@@ -61,6 +61,11 @@
 .complete-content { position: relative; z-index: 2; }
 .complete-replay { display: block; width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #d8c7ed; border-radius: 10px; background: transparent; color: #251D4D; font: 700 15px Chakra, sans-serif; cursor: pointer; }
 .complete-replay:focus-visible { outline: 3px solid #b58bd9; outline-offset: 3px; }
+.complete-socials { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.complete-social-link { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border: 1px solid #d8c7ed; border-radius: 50%; background: #eee2fa; }
+.complete-social-link img { display: block; width: 24px; height: 24px; object-fit: contain; }
+.complete-social-link[href]:hover { background: #d8c7ed; }
+.complete-social-link:focus-visible { outline: 3px solid #b58bd9; outline-offset: 3px; }
 @media (max-height: 450px) { .complete-count { margin-bottom: 8px; font-size: 22px; padding: 6px 18px; } .complete-message { margin: 8px 0 14px; font-size: 14px; } }
 
 .instructions-help {
