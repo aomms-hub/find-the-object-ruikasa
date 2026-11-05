@@ -38,6 +38,12 @@ for (const file of files) {
   for (const match of font.matchAll(/\bfile="([^"]+)"/g)) check(path.posix.join(path.posix.dirname(file), match[1]));
 }
 const manifest = JSON.parse(await readFile(path.join(site, 'manifest.webmanifest'), 'utf8'));
+const styles = await readFile(path.join(site, 'instructions.css'), 'utf8');
+for (const match of styles.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) check(match[1]);
+const instructions = await readFile(path.join(site, 'instructions.js'), 'utf8');
+const iconMap = instructions.match(/const iconFiles = \{([\s\S]*?)\};/);
+if (iconMap) for (const match of iconMap[1].matchAll(/:\s*'([^']+)'/g)) check('assets/icons/' + match[1]);
+for (const match of instructions.matchAll(/src="(assets\/[^"$]+)"/g)) check(match[1]);
 check(manifest.start_url);
 for (const icon of manifest.icons ?? []) check(icon.src);
 console.log(`Verified ${checked} references across ${files.size} website files.`);

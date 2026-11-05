@@ -1,11 +1,11 @@
 @font-face {
     font-family: Chakra;
-    src: url('./11adc1e13b64939c0f34bd859a5305ebe5c2028d75b1c5bb7a025b91b1d2e08b-ChakraPetch-Regular.ttf')
+    src: url('./assets/fonts/11adc1e13b64939c0f34bd859a5305ebe5c2028d75b1c5bb7a025b91b1d2e08b-ChakraPetch-Regular.ttf')
 }
 
 @font-face {
     font-family: Chakra;
-    src: url('./31997978ffb90d04bd1ef65b7e06acae00e136dd5013dfed4deb864b16ee77d8-ChakraPetch-Bold.ttf');
+    src: url('./assets/fonts/31997978ffb90d04bd1ef65b7e06acae00e136dd5013dfed4deb864b16ee77d8-ChakraPetch-Bold.ttf');
     font-weight: 700
 }
 

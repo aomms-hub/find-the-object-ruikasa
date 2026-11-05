@@ -6,6 +6,26 @@ Static GDevelop game, ready to publish directly with GitHub Pages.
 
 All website files live in `docs/`: `index.html`, the web manifest, exported JavaScript libraries, and game assets. Keep their relative paths intact.
 
+Media files are organized under `docs/assets/`:
+
+```text
+assets/
+├── images/
+│   ├── characters/     # Rui and Tsukasa sprites
+│   ├── scenery/        # Trees, bushes, birds, clouds, and other scenery
+│   ├── backgrounds/   # Scene backgrounds
+│   └── ui/
+│       ├── controls/  # Zoom, reset, and sound buttons
+│       └── elements/  # Dialogue panels, borders, and decorations
+├── icons/             # Instruction and help icons
+├── fonts/             # Font files and bitmap font atlas
+└── audio/
+    ├── music/
+    └── effects/
+```
+
+Game resource paths are declared in `docs/data.js`; instruction icon paths are in `docs/instructions.js`, and font URLs are in `docs/instructions.css`. Bitmap font page paths are relative to their `.fnt` descriptor in `assets/fonts/`.
+
 No Node.js installation, dependency installation, build command, or custom Actions workflow is required.
 
 ## Publish

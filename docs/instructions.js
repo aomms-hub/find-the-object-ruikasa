@@ -16,7 +16,7 @@ function addInstructionsButton(game) {
   button.className = 'instructions-help';
   button.setAttribute('aria-label', 'เปิดวิธีเล่น');
   button.title = 'วิธีเล่น';
-  button.innerHTML = '<img src="icons/information.png" alt="" draggable="false">';
+  button.innerHTML = '<img src="assets/icons/information.png" alt="" draggable="false">';
   document.body.append(button);
   // Keep help-button gestures out of the game's mouse/touch handlers.
   for (const event of ['pointerdown', 'pointerup', 'touchstart', 'touchmove', 'touchend', 'mousedown', 'mouseup']) {
@@ -72,7 +72,7 @@ window.showGameInstructions = function(game) {
     click_zoom: 'click-zoom.png',
     reset: 'reset.png'
   };
-  const icon = name => `<img src="icons/${iconFiles[name]}" width="54" height="54" alt="" aria-hidden="true">`;
+  const icon = name => `<img src="assets/icons/${iconFiles[name]}" width="54" height="54" alt="" aria-hidden="true">`;
   const dialog = document.createElement('dialog');
   state.dialog = dialog;
   dialog.className = 'instructions';
