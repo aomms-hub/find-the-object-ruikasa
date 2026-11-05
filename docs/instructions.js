@@ -77,6 +77,7 @@ window.showGameInstructions = function(game) {
   state.dialog = dialog;
   dialog.className = 'instructions';
   dialog.setAttribute('aria-labelledby', 'instructions-title');
+  dialog.setAttribute('tabindex', '-1');
   dialog.innerHTML = `
     <div class="instruction-content">
     <h1 id="instructions-title">วิธีเล่น</h1>
@@ -102,6 +103,8 @@ window.showGameInstructions = function(game) {
   }
   dialog.addEventListener('cancel', event => event.preventDefault());
   dialog.showModal();
+  dialog.focus({ preventScroll: true });
+  dialog.scrollTop = 0;
   const content = dialog.querySelector('.instruction-content');
   // Measure the complete layout, then fit it into the visible viewport. Keep
   // the button and every instruction visible rather than clipping overflow.
@@ -133,7 +136,8 @@ window.showGameInstructions = function(game) {
     start.disabled = false;
     start.textContent = reopening ? 'กลับไปเล่นต่อ' : 'เริ่มเกม';
     fitDialog();
-    start.focus({ preventScroll: true });
+    dialog.focus({ preventScroll: true });
+    dialog.scrollTop = 0;
   };
   if (reopening) ready();
   else game.loadAllAssets(() => {
