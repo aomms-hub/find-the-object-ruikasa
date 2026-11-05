@@ -2,13 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <title>Find the Object Ruikasa</title>
+    <link rel="stylesheet" href="instructions.css">
     <link rel="manifest" href="manifest.webmanifest">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta name="theme-color" content="#000000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<style>
 		body {
@@ -182,10 +184,13 @@
 	<script src="Extensions/Effects/pixi-filters/filter-outline.js" crossorigin="anonymous"></script>
 	<script src="code0.js" crossorigin="anonymous"></script>
 	<script src="data.js" crossorigin="anonymous"></script>
+	<script src="game-settings.js"></script>
+	<script src="gesture-fixes.js"></script>
 
 
 </head>
 <body>
+    <script src="instructions.js"></script>
 
     
 	<script>
@@ -205,13 +210,8 @@
         //Create a renderer
         game.getRenderer().createStandardCanvas(document.body);
 
-        //Bind keyboards/mouse/touch events
-        game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
-
-        //Load all assets and start the game
-        game.loadAllAssets(function() {
-            game.startGameLoop();
-        });
+        // Render the game behind the modal without advancing gameplay.
+        window.showGameInstructions(game);
     })();
 
 	</script>

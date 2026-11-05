@@ -23,6 +23,10 @@ Export the game from GDevelop as HTML5 and replace the game files in `docs/`. Ke
 
 ## Preview
 
+Run `node scripts/serve.mjs`, then open `http://localhost:8080`. To test on a phone connected to the same Wi-Fi, use the Mobile URL printed in the terminal. Allow Node.js on private networks if Windows Firewall prompts. Stop the server with Ctrl+C.
+
+`docs/index.html` loads the game with an instruction popup over the paused game scene. `docs/instructions.js` manages loading and dismissal; `docs/instructions.css` styles the popup. The game resumes after the Start button is pressed. `docs/game.html` redirects older links to the same page. `docs/game-settings.js` disables the startup watermark and GDevelop splash without modifying generated runtime libraries.
+
 Optional asset check (Node.js 22 or newer): run `node scripts/validate.mjs`. This checks exported script and resource paths, bitmap font images, and the manifest without changing game files. Node.js is only needed for this local check, not for hosting.
 
 Serve `docs/` using any local static HTTP server. Use HTTP rather than opening `index.html` through `file://`, which can block game assets.

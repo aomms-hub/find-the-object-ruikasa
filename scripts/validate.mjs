@@ -21,10 +21,14 @@ function check(reference) {
   if (!files.has(name)) throw new Error(`Missing asset or incorrect filename case: ${reference}`);
   checked++;
 }
-const html = await readFile(path.join(site, 'index.html'), 'utf8');
-for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) check(match[1]);
+for (const page of ['index.html', 'game.html']) {
+  const html = await readFile(path.join(site, page), 'utf8');
+  for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) check(match[1]);
+}
 const context = { gdjs: {} };
 vm.runInNewContext(await readFile(path.join(site, 'data.js'), 'utf8'), context, { timeout: 5000 });
+vm.runInNewContext(await readFile(path.join(site, 'game-settings.js'), 'utf8'), context, { timeout: 5000 });
+if (context.gdjs.projectData.properties.watermark.showWatermark || context.gdjs.projectData.properties.loadingScreen.showGDevelopSplash) throw new Error('Game branding is still enabled');
 for (const resource of context.gdjs.projectData.resources.resources) {
   if (resource.file) check(resource.file);
 }

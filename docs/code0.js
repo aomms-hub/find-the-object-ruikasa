@@ -441,18 +441,6 @@ if (isConditionTrue_0) {
 
 {
 
-
-let isConditionTrue_0 = false;
-{
-{gdjs.evtTools.camera.clampCamera(runtimeScene, 0, 0, 1280, 720, "", 0);
-}
-}
-
-}
-
-
-{
-
 gdjs.copyArray(runtimeScene.getObjects("ResetView"), gdjs.Find_32TsukasaCode.GDResetViewObjects1);
 
 let isConditionTrue_0 = false;
@@ -484,7 +472,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left"));
+isConditionTrue_0 = !gdjs.evtsExt__PinchGesture__IsPinching.func(runtimeScene, null);
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("DragArea"), gdjs.Find_32TsukasaCode.GDDragAreaObjects1);
 {for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length ;i < len;++i) {
@@ -502,6 +490,18 @@ gdjs.copyArray(runtimeScene.getObjects("DragArea"), gdjs.Find_32TsukasaCode.GDDr
 let isConditionTrue_0 = false;
 {
 {gdjs.evtTools.camera.setCameraZoom(runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(3).getAsNumber(), "", 0);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+{gdjs.evtTools.camera.clampCamera(runtimeScene, 0, 0, 1280, 720, "", 0);
 }
 }
 
