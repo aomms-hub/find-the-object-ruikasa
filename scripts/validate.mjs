@@ -25,7 +25,7 @@ for (const page of ['index.html', 'game.html']) {
   const html = await readFile(path.join(site, page), 'utf8');
   for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) check(match[1]);
 }
-const context = { gdjs: {} };
+const context = { gdjs: {}, PIXI: { settings: {} }, window: { devicePixelRatio: 2 } };
 vm.runInNewContext(await readFile(path.join(site, 'data.js'), 'utf8'), context, { timeout: 5000 });
 vm.runInNewContext(await readFile(path.join(site, 'game-settings.js'), 'utf8'), context, { timeout: 5000 });
 if (context.gdjs.projectData.properties.watermark.showWatermark || context.gdjs.projectData.properties.loadingScreen.showGDevelopSplash) throw new Error('Game branding is still enabled');

@@ -307,6 +307,7 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Sound_button"), gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1);
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
+if (!Howler._muted) Howler.mute(true);
 }
 {for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1.length ;i < len;++i) {
     gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1[i].getBehavior("Animation").setAnimationName("off");
@@ -327,6 +328,7 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Sound_button"), gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1);
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
+if (Howler._muted) Howler.mute(false);
 }
 {for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1.length ;i < len;++i) {
     gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1[i].getBehavior("Animation").setAnimationName("on");

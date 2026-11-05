@@ -17,8 +17,8 @@
     border: 1px solid #d8c7ed;
     border-radius: 20px;
     background: #faf5ff;
-    color: #43265e;
-    box-shadow: 0 24px 100px #21102f66;
+    color: #251D4D;
+    box-shadow: 0 24px 100px #251D4D66;
     font-family: Chakra, sans-serif;
     overflow: auto;
     overscroll-behavior: contain;
@@ -26,7 +26,7 @@
 }
 
 .instructions::backdrop {
-    background: #241238a6;
+    background: #251D4Da6;
     backdrop-filter: blur(3px)
 }
 
@@ -135,13 +135,14 @@
     padding: 14px 20px;
     border: 0;
     border-radius: 10px;
-    background: #7542a1;
+    background: #251D4D;
     color: #faf5ff;
     cursor: pointer
 }
 
 .instructions .start:hover {
-    background: #60328a
+    background: #251D4D;
+    filter: brightness(1.15)
 }
 
 .instructions .start:disabled {

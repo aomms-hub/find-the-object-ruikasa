@@ -10,6 +10,7 @@ function clearInstructionInput(game) {
 }
 
 function addInstructionsButton(game) {
+  window.installGameSoundControls(game);
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'instructions-help';
@@ -59,7 +60,6 @@ window.showGameInstructions = function(game) {
   const wasPaused = game.isPaused();
   if (reopening) {
     game.pause(true);
-    game.getSoundManager().pauseAllActiveSounds();
     clearInstructionInput(game);
   }
   const iconFiles = {
@@ -92,7 +92,7 @@ window.showGameInstructions = function(game) {
       <section class="instruction-step"><div class="instruction-icon">${icon('secret')}</div><h2>ดูเหมือนว่า<br>จะมีซีเคร็ตซ่อนอยู่ด้วย...?</h2></section>
     </div>
     <p></p>
-    <button class="start" type="button" disabled>กำลังโหลดเกม…</button>
+    <button class="start" type="button" disabled>กำลังโหลด…</button>
     </div>`;
   document.body.append(dialog);
   // Let the browser zoom the instructions without the game's touch handlers
@@ -157,9 +157,20 @@ window.showGameInstructions = function(game) {
       state.inputBound = true;
     }
     clearInstructionInput(game);
+    if (!reopening) {
+      // Start audio inside the button's user gesture so mobile browsers allow
+      // playback, rather than waiting for a later tap on the game canvas.
+      const sound = game.getSoundManager();
+      sound.resumeAllActiveSounds();
+      sound.setGlobalVolume(100);
+      Howler.mute(false);
+      sound.playMusicOnChannel('Barroom Ballet.aac', 1, true, 30, 1);
+      const scene = game.getSceneStack().getCurrentScene();
+      scene.getVariables().getFromIndex(1).setNumber(1);
+      scene.getVariables().getFromIndex(2).setNumber(1);
+    }
     game.pause(reopening ? wasPaused : false);
     if (reopening) {
-      game.getSoundManager().resumeAllActiveSounds();
       document.querySelector('.instructions-help')?.focus({ preventScroll: true });
     }
   }, { once: true });
