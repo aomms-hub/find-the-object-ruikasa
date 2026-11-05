@@ -1,5 +1,11 @@
 # Find the Object Ruikasa
 
+## ประกาศเกี่ยวกับซอร์สโค้ด GDevelop
+
+เงื่อนไขของซอร์สโค้ด: หากคุณนำตัวซอร์สโค้ดของเอนจิ้น GDevelop ไปแก้ไขหรือพัฒนาต่อ คุณต้องคงประกาศลิขสิทธิ์ (Copyright notice) ดั้งเดิมของ GDevelop ไว้ในซอร์สโค้ดนั้นด้วย
+
+ประกาศเดิมของ GDevelop อยู่ใน [LICENSE.GDevelop.txt](docs/LICENSE.GDevelop.txt) และต้องเก็บไว้พร้อมซอร์สโค้ดเอนจิ้นที่นำมาใช้
+
 Static GDevelop game, ready to publish directly with GitHub Pages.
 
 ## Structure

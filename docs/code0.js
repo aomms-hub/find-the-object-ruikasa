@@ -47,14 +47,20 @@ gdjs.Find_32TsukasaCode.GDResetViewObjects1= [];
 gdjs.Find_32TsukasaCode.GDResetViewObjects2= [];
 gdjs.Find_32TsukasaCode.GDDragAreaObjects1= [];
 gdjs.Find_32TsukasaCode.GDDragAreaObjects2= [];
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1= [];
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects2= [];
 
 
 gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDTsukasa1Objects1ObjectsGDgdjs_9546Find_959532TsukasaCode_9546GDTsukasa2Objects1ObjectsGDgdjs_9546Find_959532TsukasaCode_9546GDTsukasa3Objects1Objects = Hashtable.newFrom({"Tsukasa1": gdjs.Find_32TsukasaCode.GDTsukasa1Objects1, "Tsukasa2": gdjs.Find_32TsukasaCode.GDTsukasa2Objects1, "Tsukasa3": gdjs.Find_32TsukasaCode.GDTsukasa3Objects1});
+gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDRuiObjects1Objects = Hashtable.newFrom({"Rui": gdjs.Find_32TsukasaCode.GDRuiObjects1});
+gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDRuiObjects1Objects = Hashtable.newFrom({"Rui": gdjs.Find_32TsukasaCode.GDRuiObjects1});
+gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDSecretTsukasaObjects1Objects = Hashtable.newFrom({"SecretTsukasa": gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1});
 gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDSound_95959595buttonObjects1Objects = Hashtable.newFrom({"Sound_button": gdjs.Find_32TsukasaCode.GDSound_9595buttonObjects1});
 gdjs.Find_32TsukasaCode.eventsList0 = function(runtimeScene) {
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Rui"), gdjs.Find_32TsukasaCode.GDRuiObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Tsukasa1"), gdjs.Find_32TsukasaCode.GDTsukasa1Objects1);
 gdjs.copyArray(runtimeScene.getObjects("Tsukasa2"), gdjs.Find_32TsukasaCode.GDTsukasa2Objects1);
 gdjs.copyArray(runtimeScene.getObjects("Tsukasa3"), gdjs.Find_32TsukasaCode.GDTsukasa3Objects1);
@@ -91,6 +97,10 @@ for (var i = 0, k = 0, l = gdjs.Find_32TsukasaCode.GDTsukasa3Objects1.length;i<l
     }
 }
 gdjs.Find_32TsukasaCode.GDTsukasa3Objects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDRuiObjects1Objects, runtimeScene, true, true);
+}
 }
 }
 if (isConditionTrue_0) {
@@ -140,6 +150,8 @@ for(var i = 0, len = gdjs.Find_32TsukasaCode.GDTsukasa3Objects1.length ;i < len;
 }
 }
 {gdjs.evtTools.sound.playSound(runtimeScene, "Jump 1.aac", false, 80, 1);
+}
+{runtimeScene.getScene().getVariables().getFromIndex(6).setBoolean(false);
 }
 }
 
@@ -226,15 +238,118 @@ for(var i = 0, len = gdjs.Find_32TsukasaCode.GDTsukasa3Objects1.length ;i < len;
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Rui"), gdjs.Find_32TsukasaCode.GDRuiObjects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(0).getAsNumber() > 0);
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDRuiObjects1Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("Dialouge"), gdjs.Find_32TsukasaCode.GDDialougeObjects1);
+/* Reuse gdjs.Find_32TsukasaCode.GDRuiObjects1 */
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length = 0;
+
+{gdjs.evtTools.object.createObjectOnScene(runtimeScene, gdjs.Find_32TsukasaCode.mapOfGDgdjs_9546Find_959532TsukasaCode_9546GDSecretTsukasaObjects1Objects, (( gdjs.Find_32TsukasaCode.GDRuiObjects1.length === 0 ) ? 0 :gdjs.Find_32TsukasaCode.GDRuiObjects1[0].getPointX("")) + (( gdjs.Find_32TsukasaCode.GDRuiObjects1.length === 0 ) ? 0 :gdjs.Find_32TsukasaCode.GDRuiObjects1[0].getWidth()) / 2 - 60, (( gdjs.Find_32TsukasaCode.GDRuiObjects1.length === 0 ) ? 0 :gdjs.Find_32TsukasaCode.GDRuiObjects1[0].getPointY("")) + (( gdjs.Find_32TsukasaCode.GDRuiObjects1.length === 0 ) ? 0 :gdjs.Find_32TsukasaCode.GDRuiObjects1[0].getHeight()) / 3 - 60, "");
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getBehavior("Animation").setAnimationIndex(gdjs.randomInRange(0, 2));
+}
+}
+{gdjs.evtTools.sound.playSound(runtimeScene, "Jump 1.aac", false, 80, 1);
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getBehavior("Resizable").setWidth(120);
+}
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getBehavior("Resizable").setHeight(120);
+}
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].setZOrder(110);
+}
+}
+{runtimeScene.getScene().getVariables().getFromIndex(5).add(1);
+}
+{runtimeScene.getScene().getVariables().getFromIndex(6).setBoolean(true);
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDialougeObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDDialougeObjects1[i].getBehavior("Text").setText("โดนเจอของลับซะแล้ว");
+}
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getBehavior("Tween").addObjectPositionTween2("secret-float", (gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getPointX("")), (gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getPointY("")) - 35, runtimeScene.getGame().getNamedEasingsManager().resolve("easeOutCubic", ""), 0.7, false);
+}
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getBehavior("Tween").addObjectOpacityTween3("Opacity", "secret-fade", 0, runtimeScene.getGame().getNamedEasingsManager().resolve("easeInOutQuad", ""), 0.9, false);
+}
+}
+{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "secretDialogueTimer");
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SecretTsukasa"), gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length;i<l;++i) {
+    if ( gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].getBehavior("Tween").hasFinished("secret-fade") ) {
+        isConditionTrue_0 = true;
+        gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[k] = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i];
+        ++k;
+    }
+}
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length = k;
+if (isConditionTrue_0) {
+/* Reuse gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1 */
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1[i].deleteFromScene(runtimeScene);
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "secretDialogueTimer") > 5;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(6).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+{runtimeScene.getScene().getVariables().getFromIndex(6).setBoolean(false);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(6).getAsBoolean();
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("Dialouge"), gdjs.Find_32TsukasaCode.GDDialougeObjects1);
 {for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDialougeObjects1.length ;i < len;++i) {
-    gdjs.Find_32TsukasaCode.GDDialougeObjects1[i].getBehavior("Text").setText("เจอคุณอัศวินแล้ว " + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(0))) + " คน");
+    gdjs.Find_32TsukasaCode.GDDialougeObjects1[i].getBehavior("Text").setText("โดนเจอของลับซะแล้ว");
 }
 }
 }
@@ -250,6 +365,41 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(0).getAsNumber() == 0);
 }
 if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = !runtimeScene.getScene().getVariables().getFromIndex(6).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("Dialouge"), gdjs.Find_32TsukasaCode.GDDialougeObjects1);
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDialougeObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDDialougeObjects1[i].getBehavior("Text").setText("ช่วยตามหาคุณอัศวินหน่อยได้ไหม");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(0).getAsNumber() > 0);
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = !runtimeScene.getScene().getVariables().getFromIndex(6).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("Dialouge"), gdjs.Find_32TsukasaCode.GDDialougeObjects1);
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDialougeObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDDialougeObjects1[i].getBehavior("Text").setText("เจอคุณอัศวินแล้ว " + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(0))) + " คน");
+}
+}
+{runtimeScene.getScene().getVariables().getFromIndex(6).setBoolean(false);
+}
 }
 
 }
@@ -561,6 +711,8 @@ gdjs.Find_32TsukasaCode.GDResetViewObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDResetViewObjects2.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects2.length = 0;
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length = 0;
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects2.length = 0;
 
 gdjs.Find_32TsukasaCode.eventsList0(runtimeScene);
 gdjs.Find_32TsukasaCode.GDTsukasa1Objects1.length = 0;
@@ -609,6 +761,8 @@ gdjs.Find_32TsukasaCode.GDResetViewObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDResetViewObjects2.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects2.length = 0;
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects1.length = 0;
+gdjs.Find_32TsukasaCode.GDSecretTsukasaObjects2.length = 0;
 
 
 return;
