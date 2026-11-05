@@ -23,4 +23,6 @@ Export the game from GDevelop as HTML5 and replace the game files in `docs/`. Ke
 
 ## Preview
 
+Optional asset check (Node.js 22 or newer): run `node scripts/validate.mjs`. This checks exported script and resource paths, bitmap font images, and the manifest without changing game files. Node.js is only needed for this local check, not for hosting.
+
 Serve `docs/` using any local static HTTP server. Use HTTP rather than opening `index.html` through `file://`, which can block game assets.

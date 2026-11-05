@@ -9,7 +9,7 @@ gdjs.evtsExt__Gamepads__TriggerPressure = {};
 gdjs.evtsExt__Gamepads__TriggerPressure.idToCallbackMap = new Map();
 
 
-gdjs.evtsExt__Gamepads__TriggerPressure.userFunc0xdf7468 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Gamepads__TriggerPressure.userFunc0xf9f418 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 
 const playerId = eventsFunctionContext.getArgument("PlayerId") - 1;
@@ -46,7 +46,7 @@ gdjs.evtsExt__Gamepads__TriggerPressure.eventsList0 = function(runtimeScene, eve
 {
 
 
-gdjs.evtsExt__Gamepads__TriggerPressure.userFunc0xdf7468(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Gamepads__TriggerPressure.userFunc0xf9f418(runtimeScene, eventsFunctionContext);
 
 }
 

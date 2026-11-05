@@ -350,6 +350,8 @@ if (isConditionTrue_0) {
 }
 {gdjs.evtTools.camera.setCameraY(runtimeScene, 360, "", 0);
 }
+{gdjs.evtsExt__PinchGesture__EnableCameraPinch.func(runtimeScene, false, null);
+}
 }
 
 }
@@ -359,8 +361,34 @@ if (isConditionTrue_0) {
 
 
 let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__PinchGesture__IsPinching.func(runtimeScene, null);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14043556);
+}
+}
+if (isConditionTrue_0) {
+{runtimeScene.getScene().getVariables().getFromIndex(4).setNumber(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(3)));
+}
+}
+
+}
+
+
 {
-{gdjs.evtTools.camera.setCameraZoom(runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(3).getAsNumber(), "", 0);
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__PinchGesture__IsPinching.func(runtimeScene, null);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("DragArea"), gdjs.Find_32TsukasaCode.GDDragAreaObjects1);
+{runtimeScene.getScene().getVariables().getFromIndex(3).setNumber(Math.min(3, Math.max(1, gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().getFromIndex(4)) * gdjs.evtsExt__PinchGesture__Scaling.func(runtimeScene, null))));
+}
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDDragAreaObjects1[i].activateBehavior("ScrollableViewport", false);
+}
 }
 }
 
@@ -445,6 +473,35 @@ if (isConditionTrue_0) {
 {gdjs.evtTools.camera.setCameraX(runtimeScene, 640, "", 0);
 }
 {gdjs.evtTools.camera.setCameraY(runtimeScene, 360, "", 0);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left"));
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("DragArea"), gdjs.Find_32TsukasaCode.GDDragAreaObjects1);
+{for(var i = 0, len = gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length ;i < len;++i) {
+    gdjs.Find_32TsukasaCode.GDDragAreaObjects1[i].activateBehavior("ScrollableViewport", true);
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+{gdjs.evtTools.camera.setCameraZoom(runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(3).getAsNumber(), "", 0);
 }
 }
 
