@@ -1,34 +1,26 @@
 # Find the Object Ruikasa
 
-A static GDevelop game prepared for GitHub Pages. No dependencies need to be installed.
+Static GDevelop game, ready to publish directly with GitHub Pages.
 
-## Project layout
+## Structure
 
-- `public/`: the complete exported game, runtime libraries, fonts, images, and audio.
-- `scripts/build.mjs`: checks asset references (including exact filename case) and copies the game to `dist/`.
-- `dist/`: generated site, excluded from Git.
-- `.github/workflows/pages.yml`: validates pull requests and deploys pushes to `main`.
+All website files live in `docs/`: `index.html`, the web manifest, exported JavaScript libraries, and game assets. Keep their relative paths intact.
 
-Keep the exported game's directory structure and filenames intact. Its relative URLs support both repository subpaths and custom domains.
+No Node.js installation, dependency installation, build command, or custom Actions workflow is required.
 
-## Deploy
+## Publish
 
-1. In the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-2. Commit and push these changes to `main`.
-3. Wait for **Deploy to GitHub Pages** to finish in the **Actions** tab.
+1. Commit and push the project to `main`.
+2. Open the repository's **Settings → Pages**.
+3. Set **Source** to **Deploy from a branch**.
+4. Select branch **main** and folder **/docs**, then save.
 
-The site URL will be https://aomms-hub.github.io/find-the-object-ruikasa/.
-
-## Build locally
-
-With Node.js 22 or newer:
-
-```sh
-npm run build
-```
-
-Serve `dist/` with a static HTTP server to preview the game. Opening the HTML directly using `file://` can prevent game resources from loading.
+After GitHub completes deployment, visit https://aomms-hub.github.io/find-the-object-ruikasa/.
 
 ## Update the game
 
-Replace the contents of `public/` with a fresh GDevelop HTML5 export, keeping `public/.nojekyll`. Run the build, then commit and push. Do not manually edit generated runtime files unless necessary; another export will overwrite them.
+Export the game from GDevelop as HTML5 and replace the game files in `docs/`. Keep `.nojekyll`. Ensure bitmap font `.fnt` files reference the actual exported image filenames, including their letter case. Commit and push to publish the update.
+
+## Preview
+
+Serve `docs/` using any local static HTTP server. Use HTTP rather than opening `index.html` through `file://`, which can block game assets.

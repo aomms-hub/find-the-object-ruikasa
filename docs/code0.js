@@ -45,8 +45,6 @@ gdjs.Find_32TsukasaCode.GDZoomOutObjects1= [];
 gdjs.Find_32TsukasaCode.GDZoomOutObjects2= [];
 gdjs.Find_32TsukasaCode.GDResetViewObjects1= [];
 gdjs.Find_32TsukasaCode.GDResetViewObjects2= [];
-gdjs.Find_32TsukasaCode.GDNewSprite2Objects1= [];
-gdjs.Find_32TsukasaCode.GDNewSprite2Objects2= [];
 gdjs.Find_32TsukasaCode.GDDragAreaObjects1= [];
 gdjs.Find_32TsukasaCode.GDDragAreaObjects2= [];
 
@@ -502,8 +500,6 @@ gdjs.Find_32TsukasaCode.GDZoomOutObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDZoomOutObjects2.length = 0;
 gdjs.Find_32TsukasaCode.GDResetViewObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDResetViewObjects2.length = 0;
-gdjs.Find_32TsukasaCode.GDNewSprite2Objects1.length = 0;
-gdjs.Find_32TsukasaCode.GDNewSprite2Objects2.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects2.length = 0;
 
@@ -552,8 +548,6 @@ gdjs.Find_32TsukasaCode.GDZoomOutObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDZoomOutObjects2.length = 0;
 gdjs.Find_32TsukasaCode.GDResetViewObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDResetViewObjects2.length = 0;
-gdjs.Find_32TsukasaCode.GDNewSprite2Objects1.length = 0;
-gdjs.Find_32TsukasaCode.GDNewSprite2Objects2.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects1.length = 0;
 gdjs.Find_32TsukasaCode.GDDragAreaObjects2.length = 0;
 
