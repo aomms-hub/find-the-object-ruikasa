@@ -37,9 +37,17 @@
     width: min(420px, calc(100% - 24px));
     height: auto;
     max-height: calc(100dvh - 24px) !important;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #715b85 #eee2fa;
     text-align: center;
 }
+.complete-dialog::-webkit-scrollbar { width: 8px; }
+.complete-dialog::-webkit-scrollbar-track { background: #eee2fa; border-radius: 8px; }
+.complete-dialog::-webkit-scrollbar-thumb { background: #7542a1; border-radius: 8px; border: 2px solid #eee2fa; }
+.complete-dialog::-webkit-scrollbar-thumb:hover { background: #251D4D; }
 .complete-content { padding: clamp(18px, 4dvh, 36px) 24px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .complete-count { display: inline-block; margin: 0 0 16px; padding: 10px 22px; border-radius: 999px; background: #eee2fa; font-size: 28px; font-weight: 700; color: #251D4D; }
 .complete-message { margin: 12px 0 24px; line-height: 1.7; color: #715b85; font-size: 16px; }
@@ -47,16 +55,10 @@
 @media (orientation: landscape) {
     .complete-character { width: min(100%, 340px); max-height: 60dvh; }
 }
-.complete-continue { position: relative; width: 100%; margin-top: 91px; }
-.complete-rui { position: absolute; left: 0; bottom: 100%; width: 130px; height: 91px; overflow: hidden; pointer-events: none; z-index: 1; }
-.complete-rui img { display: block; width: 100%; height: auto; }
+.complete-continue { width: 100%; }
 .complete-replay-wrap { position: relative; width: 100%; margin-top: 10px; }
-.complete-tsukasa { position: absolute; right: 0; bottom: 100%; width: 130px; height: 91px; overflow: hidden; pointer-events: none; z-index: 1; }
-.complete-tsukasa img { display: block; width: 100%; height: auto; }
 .complete-replay-wrap .complete-replay { margin-top: 0; }
-@media (max-width: 480px), (max-height: 500px) { .complete-tsukasa { width: 90px; height: 63px; } }
 .complete-content { position: relative; z-index: 2; }
-@media (max-width: 480px), (max-height: 500px) { .complete-rui { width: 90px; height: 63px; } .complete-continue { margin-top: 63px; } }
 .complete-replay { display: block; width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #d8c7ed; border-radius: 10px; background: transparent; color: #251D4D; font: 700 15px Chakra, sans-serif; cursor: pointer; }
 .complete-replay:focus-visible { outline: 3px solid #b58bd9; outline-offset: 3px; }
 @media (max-height: 450px) { .complete-count { margin-bottom: 8px; font-size: 22px; padding: 6px 18px; } .complete-message { margin: 8px 0 14px; font-size: 14px; } }

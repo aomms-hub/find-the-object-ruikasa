@@ -28,8 +28,6 @@
         <h1 id="complete-title">เจอตัวคุณอัศวินแล้ว!</h1>
         <p class="complete-message">ขอบคุณที่ช่วยจอมเวท<br>ตามหาคุณอัศวินจนครบทั้ง 12 คน!</p>
         <div class="complete-continue">
-          <div class="complete-rui" aria-hidden="true"><img src="assets/images/characters/Rui.png" alt=""></div>
-          <div class="complete-tsukasa" aria-hidden="true"><img src="assets/images/characters/Tsukasa1.png" alt=""></div>
           <button class="start" type="button" data-action="continue">กลับไปที่หน้าจอ</button>
         </div>
         <div class="complete-replay-wrap">
